@@ -1,0 +1,101 @@
+.pp {
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 90px 95px 50px;
+    background-color: rgba(28, 27, 27, 0.4);
+    backdrop-filter: blur(50px);
+    overflow-y: auto;
+    z-index: 110;
+    display: none;
+    @supports (backdrop-filter: blur(20px)) {
+        background-color: rgba(28, 27, 27, 0.4);
+        backdrop-filter: blur(50px);
+    }
+    label.error,
+    span.error {
+        display: block;
+        margin: 5px 0 0;
+        color: @red;
+    }
+
+    &_x-btn {
+        position: absolute;
+        top: -25px;
+        right: -25px;
+        &:hover {
+            transform: rotate(90deg);
+        }
+
+        &_icon {
+            pointer-events: none;
+        }
+    }
+    &_wrapper {
+        box-sizing: border-box;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 1210px;
+        margin: auto;
+        background-color: @grey;
+        background-image: url(../assets/images/noise.png);
+        background-position: 0 0;
+        background-size: auto;
+        background-repeat: repeat;
+    }
+    &_container {
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 950px;
+        margin: 0 auto;
+        padding: 0 40px 40px;
+    }
+    &_sticky {
+        position: sticky;
+        top: 0;
+        align-self: flex-end;
+        width: 0;
+        height: 0;
+    }
+    &_title {
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        margin: -40px 0 70px -85px;
+        padding: 10px 85px;
+        width: 595px;
+        min-height: 80px;
+        background-color: @black;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-family: @font2;
+        font-size: 22px;
+        line-height: 1.36;
+        color: @white;
+        letter-spacing: 0.02em;
+        z-index: 1;
+    }
+    &_btn {
+        display: flex;
+        gap: 45px;
+        &-submit {
+            width: 50%;
+        }
+        &-close {
+            width: 50%;
+            border: none;
+        }
+        &_btn-check {
+            span.error {
+                display: block;
+                margin: 10px 0 0;
+                color: @red;
+            }
+        }
+    }
+}
