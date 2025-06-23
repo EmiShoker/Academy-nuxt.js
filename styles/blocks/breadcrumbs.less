@@ -1,0 +1,17 @@
+.breadcrumbs {
+    &_container {
+        .container();
+        padding: 0;
+    }
+    &_items {
+        list-style: none;
+    }
+    &_item {
+        display: inline;
+    }
+    &_item + &_item {
+        &::before {
+            content: "/";
+        }
+    }
+}
