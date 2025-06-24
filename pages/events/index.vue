@@ -1,5 +1,7 @@
 <template>
-
+  <div>
+    <BlogListing/>
+  </div>
 </template>
 
 <script>

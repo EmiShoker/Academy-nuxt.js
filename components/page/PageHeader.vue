@@ -7,8 +7,9 @@
             <SvgIcon class="page-header_logo-icon" name="logo" width="202" height="147"/>
           </NuxtLink>
           <nav class="page-header_nav" :class="{'page-header_nav--active': navActive}">
-            <NuxtLink :to="navLink.link" v-for="(navLink, navLinkIndex) in navList" :key="navLinkIndex"  class="page-header_nav-link link">
-              {{ navLink.name}}
+            <NuxtLink :to="navLink.link" v-for="(navLink, navLinkIndex) in navList" :key="navLinkIndex"
+                      class="page-header_nav-link link">
+              {{ navLink.name }}
             </NuxtLink>
           </nav>
           <div class="page-header_nav-user">
@@ -22,7 +23,8 @@
               Войти
               <SvgIcon class="page-header_user-icon" name="user" width="21" height="18"/>
             </a>
-            <button @click="navToggle" id="js-navToggle" class="page-header_nav-toggle" :class="{'page-header_nav-toggle--active': navActive}"   type="button" ></button>
+            <button @click="navToggle" id="js-navToggle" class="page-header_nav-toggle"
+                    :class="{'page-header_nav-toggle--active': navActive}" type="button"></button>
           </div>
         </div>
       </header>
@@ -72,16 +74,18 @@ const navList = [
   background-color: rgba(222, 222, 222, 0.5);
   backdrop-filter: blur(20px);
   z-index: 100;
+  margin-bottom: 100px;
 
   @media @bw1660 {
-  height: 111px;
-}
+    height: 111px;
+  }
   @media @bw768 {
-  height: 111px;
-}
+    height: 111px;
+  }
   @media @bw320 {
-  height: 70px;
-}
+    height: 70px;
+  }
+
   &::before {
     content: "";
     display: block;
@@ -105,6 +109,7 @@ const navList = [
     align-items: center;
     z-index: 1;
   }
+
   &_logo {
     flex-shrink: 0;
     width: 202px;
@@ -113,22 +118,24 @@ const navList = [
     text-decoration: none;
 
     @media @bw1660 {
-    width: 152px;
-    height: 111px;
-  }
+      width: 152px;
+      height: 111px;
+    }
     @media @bw768 {
-    width: 152px;
-    height: 111px;
-  }
+      width: 152px;
+      height: 111px;
+    }
     @media @bw360 {
-    width: 96px;
-    height: 70px;
+      width: 96px;
+      height: 70px;
+    }
   }
-  }
+
   &_logo-icon {
     width: 100%;
     height: 100%;
   }
+
   &_nav {
     box-sizing: border-box;
     display: flex;
@@ -136,37 +143,38 @@ const navList = [
     margin: 0 auto;
 
     @media @bw1020 {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 211px 30px 30px;
-    background-color: fade(@grey, 98%);
-    transition: transform 0.4s;
-    transform: translateX(-100%);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100vh;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 211px 30px 30px;
+      background-color: fade(@grey, 98%);
+      transition: transform 0.4s;
+      transform: translateX(-100%);
 
-    overflow-x: hidden;
-    overflow-y: auto;
+      overflow-x: hidden;
+      overflow-y: auto;
 
-    @supports (backdrop-filter: blur(20px)) {
-      background-color: fade(@grey, 70%);
-      backdrop-filter: blur(20px);
+      @supports (backdrop-filter: blur(20px)) {
+        background-color: fade(@grey, 70%);
+        backdrop-filter: blur(20px);
+      }
     }
-  }
     @media @bw768 {
-    padding: 150px 20px 30px;
-  }
+      padding: 150px 20px 30px;
+    }
+
     &-link {
       margin: 0 25px;
+
       &.router-link-exact-active {
         color: @red;
         pointer-events: none;
-        text-shadow:
-            0 0 8px,
-            0 0 14px currentColor;
+        text-shadow: 0 0 8px,
+        0 0 14px currentColor;
       }
     }
 
@@ -176,24 +184,28 @@ const navList = [
       }
     }
   }
+
   &_nav-toggle {
     display: none;
+
     &:hover {
       cursor: pointer;
     }
+
     @media @bw1020 {
-    display: block;
-    position: relative;
-    right: -11px;
-    margin-left: 18px;
-    width: 40px;
-    height: 40px;
-    border: none;
-    background: none;
-  }
+      display: block;
+      position: relative;
+      right: -11px;
+      margin-left: 18px;
+      width: 40px;
+      height: 40px;
+      border: none;
+      background: none;
+    }
     @media @bw768 {
-    margin-left: 5px;
-  }
+      margin-left: 5px;
+    }
+
     &::before,
     &::after {
       content: "";
@@ -206,14 +218,15 @@ const navList = [
       border-radius: 2px;
       background-color: @black;
       transform-origin: 50% 50%;
-      transition:
-          transform 0.4s,
-          box-shadow 0.4s;
+      transition: transform 0.4s,
+      box-shadow 0.4s;
     }
+
     &::before {
       top: 13px;
       box-shadow: 0 6px 0 @black;
     }
+
     &::after {
       top: 25px;
     }
@@ -223,31 +236,36 @@ const navList = [
         transform: translate(0, 6px) rotate(45deg);
         box-shadow: none;
       }
+
       &::after {
         transform: translate(0, -6px) rotate(-45deg);
       }
     }
   }
+
   &_nav-user {
     display: none;
 
     @media @bw1020 {
-    display: flex;
-    align-items: center;
-    margin-top: 20px;
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+    }
   }
-  }
+
   &_nav-user-link {
     margin-right: 25px;
     font-weight: 400;
     font-size: 16px;
     line-height: 22px;
   }
+
   &_nav-logout {
     width: 24px;
     height: 24px;
     font-size: 0;
   }
+
   &_right-block {
     display: flex;
     justify-content: flex-end;
@@ -255,46 +273,49 @@ const navList = [
     width: 202px;
 
     @media @bw1660 {
-    width: 152px;
-  }
+      width: 152px;
+    }
     @media @bw1020 {
-    width: auto;
-    margin-left: auto;
+      width: auto;
+      margin-left: auto;
+    }
   }
-  }
+
   &_user-btn {
     @media @bw1020 {
-    display: flex;
-    width: 40px;
-    height: 40px;
-    padding: 0;
-    border: none;
-    background: none;
-    color: @black;
-    font-size: 0;
-  }
+      display: flex;
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      border: none;
+      background: none;
+      color: @black;
+      font-size: 0;
+    }
+
     &:hover {
       @media @bw1020 {
-      cursor: default;
-      border: none;
-      background-color: transparent;
-    }
+        cursor: default;
+        border: none;
+        background-color: transparent;
+      }
     }
   }
+
   &_user-icon {
     display: none;
     @media @bw1020 {
-    display: block;
-    margin: auto;
-  }
+      display: block;
+      margin: auto;
+    }
   }
 }
 
 .show-nav {
   body {
     @media @bw1020 {
-    overflow: hidden;
-  }
+      overflow: hidden;
+    }
   }
 
 }

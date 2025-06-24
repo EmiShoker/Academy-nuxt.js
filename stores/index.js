@@ -1,15 +1,20 @@
 import {defineStore} from "pinia";
+
 export const useStore = defineStore("index", {
-    state: () => {
-        return {
-            modals: {
-                events: { show: false },
-            }
+    state: () => ({
+        modals: {
+            events: {show: false},
+            rent: {show: false},
+        },
+    }),
+    getters: {
+        hasActiveModals(state) {
+            return Object.keys(state.modals).find((key) => state.modals[key].show);
         }
     },
     actions: {
         setModal(name, config = {show: false, options: {}}) {
-            if(!this.modals[name]) return;
+            if (!this.modals[name]) return;
 
             this.modals[name] = {
                 show: config.show,
@@ -17,4 +22,4 @@ export const useStore = defineStore("index", {
             }
         }
     }
-});
+})
