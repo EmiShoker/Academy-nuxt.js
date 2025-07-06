@@ -12,11 +12,11 @@
 .home {
   box-sizing: border-box;
   width: 100%;
-  padding: 100px 0;
   overflow: hidden;
   @media @bw1340 {
     padding: 80px 0;
   }
+
   &_main-header {
     margin-bottom: 100px;
     @media @bw1340 {
@@ -26,6 +26,7 @@
       margin-bottom: 40px;
     }
   }
+
   &_offers {
     margin: 0 auto 200px;
     @media @bw1340 {

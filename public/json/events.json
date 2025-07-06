@@ -1,28 +1,7 @@
-<template>
-  <section class="events">
-
-    <div class="events_listing">
-      <h2 class="section-title">Мероприятия</h2>
-
-      <div class="events_list">
-        <CardEvent v-for="(card, cardIdx) in cards" :key="cardIdx" :card="card"/>
-      </div>
-
-      <div class="events_arrow">
-        <a href="#" class="events_link link">
-          <span>Показать еще</span>
-          <SvgIcon class="events_arrow-icon" name="arrow" width="92" height="62"></SvgIcon>
-        </a>
-      </div>
-    </div>
-  </section>
-</template>
-
-<script setup>
-const cards = [
+[
   {
     "class": "events_card",
-    "link": "nirvana",
+    "slug": "events/nirvana",
     "img": "/images/events/Nirvana.svg",
     "alt": "nirvana",
     "title": "Собираемся и слушаем альбом Nirvana",
@@ -32,7 +11,7 @@ const cards = [
   },
   {
     "class": "events_card",
-    "link": "stuff",
+    "slug": "events/stuff",
     "img": "/images/events/HowStuffWorks.svg",
     "alt": "stuff",
     "title": "Есть тема, нужно обсудить с HowStuffWorks",
@@ -42,8 +21,8 @@ const cards = [
   },
   {
     "class": "events_card",
-    "link": "sade",
-    "img": "/images/events/Sade.svg",
+    "slug": "events/sade",
+    "img": "/images/events/sade.jpg",
     "alt": "sade",
     "title": "Вечер | The Best of Sade",
     "descr": "Музыка группы имеет эклектичный характер, сочетая в себе элементы музыки соул, джаза, ритм-блюза и фанка.",
@@ -52,7 +31,7 @@ const cards = [
   },
   {
     "class": "events_card",
-    "link": "malevich",
+    "slug": "events/malevich",
     "img": "/images/events/Malevich.svg",
     "alt": "malevich",
     "title": "Выставка Малевича в Томске",
@@ -62,7 +41,7 @@ const cards = [
   },
   {
     "class": "events_card",
-    "link": "tatler",
+    "slug": "events/tatler",
     "img": "/images/events/Tatler.svg",
     "alt": "tatler",
     "title": "Мастер — класс по студийной съемке от Tatler",
@@ -72,7 +51,7 @@ const cards = [
   },
   {
     "class": "events_card",
-    "link": "hatters",
+    "slug": "events/hatters",
     "img": "/images/events/Hatters.svg",
     "alt": "hatters",
     "title": "Повесилимся на славу на концерте The Hatters",
@@ -81,40 +60,3 @@ const cards = [
     "datetime": "2022-12-23T10:00"
   }
 ]
-
-</script>
-
-
-<style scoped lang="less">
-.events {
-  padding: 140px 0 100px;
-
-  &_list {
-    .container;
-    display: flex;
-    flex-wrap: wrap;
-    
-  }
-
-  &_link {
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-
-    &:hover .events_arrow-icon {
-      transform: rotate(270deg);
-    }
-  }
-
-  &_arrow {
-    &-icon {
-      transition: transform 0.3s;
-      padding: 30px 0;
-      margin: auto;
-      transform: rotate(90deg);
-    }
-  }
-
-}
-
-</style>

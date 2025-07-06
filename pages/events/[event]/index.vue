@@ -1,8 +1,10 @@
 <template>
-
+  <EventsEntry :event="event"/>
 </template>
 
-<script>
+<script setup>
+const route = useRoute();
+const event = computed(() => route.params.event);
 
 </script>
 

@@ -1,6 +1,6 @@
 <template>
   <article class="event-card" :class="card.class">
-    <NuxtLink :to="card.link" class="event-card_link">
+    <NuxtLink :to="card.slug" class="event-card_link">
       <picture class="event-card_picture">
         <source type="image/webp" :srcset="card.img_webp"/>
         <img :src="card.img" :alt="card.alt" class="event-card_img"/>
@@ -10,7 +10,7 @@
 
       <p class="event-card_description">{{ card.descr }}</p>
 
-      <time datetime="{{card.datetime}}" class="event-card_time">{{ card.time }}</time>
+      <time :datetime="card.datetime" class="event-card_time">{{ card.time }}</time>
     </NuxtLink>
   </article>
 
@@ -19,6 +19,7 @@
 const props = defineProps({
   card: {
     type: Object,
+    required: true,
     default: () => {
     },
   }

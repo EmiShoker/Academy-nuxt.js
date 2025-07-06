@@ -2,7 +2,7 @@
   <div>
     <PageHeader class="app_header"/>
     <NuxtPage class="app_page"/>
-    <PageHeader class="app_footer"/>
+    <!--    <PageFooter class="app_footer"/>-->
 
     <ModalWindow name="events">
       <template #content>

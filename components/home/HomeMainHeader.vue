@@ -12,7 +12,7 @@
 <style lang="less">
 .main-header {
   &_title {
-    margin-top: 100px;
+    margin-top: 50px;
   }
 
   &_title,
@@ -23,7 +23,11 @@
     text-shadow: 0 0 16px,
     0 0 7px currentColor;
     text-align: center;
-    padding: 60px 0;
+    padding-bottom: 60px;
+  }
+
+  &_subtitle {
+    padding-top: 60px;
   }
 
   &_logo {
