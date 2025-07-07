@@ -85,7 +85,7 @@ const close = () => {
 
 
   label.error,
-  span.error {
+  div.error {
     display: block;
     margin: 5px 0 0;
     color: @red;

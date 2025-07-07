@@ -355,6 +355,7 @@ if (data?.value) pageData.value = data.value;
   .container;
   padding: 140px 40px 150px;
 
+
 }
 
 </style>
