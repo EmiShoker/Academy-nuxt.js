@@ -100,19 +100,42 @@
 }
 
 .radio {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  &_list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &_title {
+    margin: 0 0 10px;
+    color: @black;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+
+    @media @bw1020 {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
 
   &_input {
     .is-hidden();
 
     &:checked {
       & ~ .radio_mark {
-        //~, который означает "соседний элемент". Это значит, что стиль будет применен к элементу с классом .radio_mark, который расположен сразу рядом после элемента &_input
+        //~, который означает "соседний элемент".
+        // Это значит, что стиль будет применен к элементу с классом
+        // .radio_mark, который расположен сразу рядом после элемента
+        // &_input
         background-color: @black;
       }
     }
+  }
+
+  &--disabled {
+    pointer-events: none;
+    opacity: 0.8;
   }
 
   &_item {
@@ -157,7 +180,17 @@
 }
 
 .check {
-  &-red {
+  box-sizing: border-box;
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 24px;
+  padding-top: 2px;
+  color: @black;
+  cursor: pointer;
+
+  &--red {
     color: @red;
 
     .check_mark {
@@ -173,7 +206,7 @@
     }
   }
 
-  &-disabled {
+  &--disabled {
     pointer-events: none;
     opacity: 0.5;
   }
@@ -201,18 +234,13 @@
         }
       }
     }
+
+    & ~ div.error {
+      order: 1;
+      margin-top: 2px;
+    }
   }
 
-  box-sizing: border-box;
-  position: relative;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
-  min-height: 24px;
-  padding-top: 2px;
-  margin: 20px 0 40px;
-  color: @black;
-  cursor: pointer;
 
   &_mark {
     box-sizing: border-box;

@@ -2,8 +2,8 @@
 	<div v-if = "name" class = "field" :class = "{'field--disabled:': disabled}">
 		<div class = "field_wrap">
 
-			<input v-model = "value"
-					v-maska = "mask"
+			<input
+					v-model = "value"
 					class = "field_input"
 					:class = "{
         'field_input--has-value':value || value === 0,
@@ -11,7 +11,7 @@
       }"
 					:autocomplete = "autocomplete"
 					:disabled = "disabled"
-					:inputmode = "email"
+					inputmode = "email"
 					type = "text"
 			/>
 			<span v-if = "label" class = "field_label" :class = "{}">{{ label }}</span>
@@ -66,15 +66,16 @@ const mask = computed(() => {
 });
 
 const rules = computed(() => {
-	return (typeof props.config.rules === 'object' && props.config.rules) || {
+	return Object.assign((typeof props.config.rules === 'object' && props.config.rules) || {}, {
 		email: true,
-	};
+	});
 });
 
-const {value, errorMessage} = name.value ? useField(name.value, rules, {
+const {value, errorMessage} = name.value ? useField(name.value, rules.value, {
 	initialValue: props.initialValue,
-	label: veeLabel.value ? `${veeLabel.value}` : label.value ? `${label.value}` : '',
+	label: veeLabel.value ? `${veeLabel.value}` : label.value ? `${label.value}` : ''
 }) : {};
+
 </script>
 
 

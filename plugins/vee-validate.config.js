@@ -1,5 +1,5 @@
 import {configure, defineRule} from "vee-validate";
-import {localize, setLocale} from "vee-validate/i18n";
+import {localize, setLocale} from "@vee-validate/i18n";
 import ru from '@/json/vee-validate/ru.json';
 import {all as rules} from "@vee-validate/rules";
 
@@ -24,6 +24,14 @@ export default defineNuxtPlugin(() => {
 	};
 	defineRule('phone', phoneValidator);
 
+	const requiredCheckValidator = (value) => {
+		if (value !== true && value !== 1) {
+			return false;
+		}
+		return !!String(value).trim().length;
+	};
+	defineRule('required_check', requiredCheckValidator);
+
 	const lowercaseValidator = (value) => {
 		if (isEmpty(value)) {
 			return true;
@@ -47,6 +55,7 @@ export default defineNuxtPlugin(() => {
 		return /[\d!@#$%^&? *]/.test(value);
 	};
 	defineRule('special', specialValidator);
+
 
 	configure({
 		generateMessage: localize({

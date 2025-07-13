@@ -2,7 +2,8 @@
 	<div v-if = "name" class = "field" :class = "{'field--disabled:': disabled}">
 		<div class = "field_wrap">
 
-			<input v-model = "value"
+			<input
+					v-model = "value"
 					v-maska = "mask"
 					class = "field_input"
 					:class = "{
@@ -40,6 +41,7 @@ const props = defineProps({
 	}
 });
 
+
 const name = computed(() => {
 	return (typeof props.config.name === 'string' && props.config.name) || '';
 });
@@ -64,22 +66,19 @@ const inputmode = computed(() => {
 	return (typeof props.config.inputmode === 'string' && props.config.inputmode) || 'text';
 });
 
-const mask = computed(() => {
-	return (typeof props.config.mask === 'string' && props.config.mask) || '';
-});
 
 const rules = computed(() => {
-	return (typeof props.config.rules === 'object' && props.config.rules) || {};
+	return Object.assign((typeof props.config.rules === 'object' && props.config.rules) || {}, {});
 });
 
-const {value, errorMessage} = name.value ? useField(name.value, rules, {
+const {value, errorMessage} = name.value ? useField(name.value, rules.value, {
 	initialValue: props.initialValue,
-	label: veeLabel.value ? `${veeLabel.value}` : label.value ? `${label.value}` : '',
+	label: veeLabel.value ? `${veeLabel.value}` : label.value ? `${label.value}` : ''
 }) : {};
 </script>
 
-
-<style lang = "less"
+<style
+		lang = "less"
 		scoped>
 
 </style>

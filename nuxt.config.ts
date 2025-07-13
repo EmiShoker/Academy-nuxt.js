@@ -1,37 +1,47 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import svgLoader from "vite-svg-loader"
+import dynamicImport from "vite-plugin-dynamic-import";
+import {sort} from "vite-plugin-utils/sort-plugin";
+
 export default defineNuxtConfig({
-  compatibilityDate: '2025-05-15',
-  devtools: { enabled: true },
-  app: {
-    head: {
-      charset: "utf-8",
-      link: [
-        {
-          rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap",
+    compatibilityDate: '2025-05-15',
+    devtools: {enabled: true},
+    app: {
+        head: {
+            charset: "utf-8",
+            link: [
+                {
+                    rel: "stylesheet",
+                    href: "https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap",
+                }
+            ],
+            script: [],
+            viewport: "width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1, maximum-scale=1.0, user-scalable=no",
         }
-      ],
-      script: [],
-      viewport: "width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1, maximum-scale=1.0, user-scalable=no",
-    }
-  },
-  css: ["@/styles/styles.less"],
-  modules: [
-      "@pinia/nuxt"
-  ],
-  ssr: true,
-  vite: {
-    css: {
-      preprocessorOptions: {
-        less: {
-          additionalData: `
+    },
+    css: ["@/styles/styles.less"],
+    modules: [
+        "@pinia/nuxt"
+    ],
+    ssr: true,
+    vite: {
+        css: {
+            preprocessorOptions: {
+                less: {
+                    additionalData: `
             @import "@/styles/variables.less";
             @import "@/styles/mixins.less";
           `
-        }
-      }
+                }
+            }
+        },
+        plugins: [
+            sort({
+                plugin: dynamicImport(),
+                names: ["vite:vue", "vite:vue-jsx"],
+                enforce: "post",
+            }),
+            svgLoader()
+        ],
     },
-    plugins: [svgLoader()],
-  },
 })

@@ -1,72 +1,72 @@
 <template>
-  <footer class="page-footer">
-    <div class="page-footer_lines">
-      <span class="page-footer_line line"></span>
-      <span class="page-footer_line line"></span>
+  <footer class = "page-footer">
+    <div class = "page-footer_lines">
+      <span class = "page-footer_line line"></span>
+      <span class = "page-footer_line line"></span>
     </div>
 
-    <div class="page-footer_container">
-      <nav class="page-footer_nav">
-        <a href="#" class="page-footer_nav-link link">Календарь мероприятий</a>
-        <a href="#" class="page-footer_nav-link link">Провести мероприятие</a>
-        <a href="#" class="page-footer_nav-link link">Стать арендатором</a>
-        <a href="#" class="page-footer_nav-link link">Наши проекты</a>
-        <a href="#" class="page-footer_nav-link link">Контакты</a>
+    <div class = "page-footer_container">
+      <nav class = "page-footer_nav">
+        <a href = "#" class = "page-footer_nav-link link">Календарь мероприятий</a>
+        <a href = "#" class = "page-footer_nav-link link">Провести мероприятие</a>
+        <a href = "#" class = "page-footer_nav-link link">Стать арендатором</a>
+        <a href = "#" class = "page-footer_nav-link link">Наши проекты</a>
+        <a href = "#" class = "page-footer_nav-link link">Контакты</a>
       </nav>
       <form
-          action="https://jsonplaceholder.typicode.com/posts"
-          id="js-subscribeForm"
-          class="page-footer_subscribe subscribe subscribe-form">
-        <div class="subscribe_wrapper">
-          <span class="subscribe-field_text btext">Подпишись и будь в курсе происходящего</span>
-          <div class="subscribe_input-wrapper">
-            <label class="subscribe_field field">
+          action = "https://jsonplaceholder.typicode.com/posts"
+          id = "js-subscribeForm"
+          class = "page-footer_subscribe subscribe subscribe-form">
+        <div class = "subscribe_wrapper">
+          <span class = "subscribe-field_text btext">Подпишись и будь в курсе происходящего</span>
+          <div class = "subscribe_input-wrapper">
+            <label class = "subscribe_field field">
               <input
-                  id="js-subscribeEmail"
-                  class="field_input"
-                  type="email"
-                  placeholder="Email"
-                  name="email"
+                  id = "js-subscribeEmail"
+                  class = "field_input"
+                  type = "email"
+                  placeholder = "Email"
+                  name = "email"
                   required/>
             </label>
-            <button class="btn subscribe-btn" type="submit">Подписаться</button>
+            <button class = "btn subscribe-btn" type = "submit">Подписаться</button>
           </div>
         </div>
 
-        <label class="check">
-          <span class="check_label check_label-s"> Согласен на обработку персональных данных </span>
-          <input type="checkbox" name="agree" class="check_input" required checked/>
+        <label class = "check">
+          <span class = "check_label check_label-s"> Согласен на обработку персональных данных </span>
+          <input type = "checkbox" name = "agree" class = "check_input" required checked/>
 
-          <span class="check_mark"></span>
+          <span class = "check_mark"></span>
         </label>
       </form>
     </div>
-    <div class="page-footer_links">
-      <div class="page-footer_links-l">
-        <p class="page-footer_links-l-copyright">© Millennials 2022</p>
-        <a href="#" class="page-footer_link link">Политика конфиденциальности</a>
-        <a href="#" class="page-footer_link link">Cookies</a>
+    <div class = "page-footer_links">
+      <div class = "page-footer_links-l">
+        <p class = "page-footer_links-l-copyright">© Millennials 2022</p>
+        <a href = "#" class = "page-footer_link link">Политика конфиденциальности</a>
+        <a href = "#" class = "page-footer_link link">Cookies</a>
       </div>
-      <div class="page-footer_links-c">
-        <div class="page-footer_links-c-btns">
-          <button class="page-footer_links-c-btn x-btn">
-            <img class="x-btn_icon" width="24" height="24" src="assets/images/page/insta.svg"/>
+      <div class = "page-footer_links-c">
+        <div class = "page-footer_links-c-btns">
+          <button class = "page-footer_links-c-btn x-btn">
+            <img class = "x-btn_icon" width = "24" height = "24" src = "assets/images/page/insta.svg"/>
           </button>
-          <button class="page-footer_links-c-btn x-btn">
-            <img class="x-btn_icon" width="24" height="24" src="assets/images/page/vk.svg"/>
+          <button class = "page-footer_links-c-btn x-btn">
+            <img class = "x-btn_icon" width = "24" height = "24" src = "assets/images/page/vk.svg"/>
           </button>
         </div>
       </div>
-      <div class="page-footer_links-r">
-        <p class="btext">Создание и продвижение</p>
-        <img class="page-footer_links-r-icon" src="assets/images/page/tagree.svg"/>
+      <div class = "page-footer_links-r">
+        <p class = "btext">Создание и продвижение</p>
+        <img class = "page-footer_links-r-icon" src = "assets/images/page/tagree.svg"/>
       </div>
     </div>
   </footer>
 
 </template>
 <script setup></script>
-<style scoped lang="less">
+<style scoped lang = "less">
 .page-footer {
   flex: 0 0 auto;
   position: relative;
@@ -98,7 +98,7 @@
       width: 100%;
       max-width: 1254px;
       height: 1px;
-      background-color: linear-gradient;
+      //background-color: linear-gradient;
       pointer-events: none;
     }
   }
