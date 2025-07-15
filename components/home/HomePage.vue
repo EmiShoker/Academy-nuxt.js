@@ -1,14 +1,15 @@
 <template>
-  <div class="home">
-    <HomeMainHeader class="home_main-header"/>
+  <div class = "home">
+    <HomeMainHeader class = "home_main-header"/>
     <HomeOffers/>
+    <HomeUpcoming/>
   </div>
 </template>
 
 <script setup>
 </script>
 
-<style lang="less">
+<style lang = "less">
 .home {
   box-sizing: border-box;
   width: 100%;

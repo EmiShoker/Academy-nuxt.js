@@ -1,11 +1,11 @@
 <template>
   <div class = "form-events">
-    <h2 class = "form-events_title">Заполните форму<br />и мы подберем площадку</h2>
+    <h2 class = "form-events_title">Заполните форму<br/>и мы подберем площадку</h2>
 
     <form class = "form-events_form form" @submit = "onSubmit">
       <div class = "field_list">
         <FieldRadio class = "field form_field form_field--w50"
-                    :config = "{
+            :config = "{
           name:'format',
           label: 'Формат мероприятия',
           options: optionsRadio,
@@ -13,7 +13,7 @@
             required: true
           },
         }"
-                    :submitCount = "submitCount"
+            :submitCount = "submitCount"
         />
         <div class = "field_group">
           <FieldSelect class = "field form_field" :config = "{
@@ -24,29 +24,29 @@
             rulse: {
               required: true
             }
-          }" :submitCount = "submitCount" />
+          }" :submitCount = "submitCount"/>
 
           <div class = "form_field field js-dateField">
             <h6 class = "field_title">Дата проведения:</h6>
             <div class = "field_date">
               <div class = "field_date-inputs">
-                <input class = "field_date-input js-dateDay" placeholder = "ДД" readonly = "readonly" type = "text" />
+                <input class = "field_date-input js-dateDay" placeholder = "ДД" readonly = "readonly" type = "text"/>
                 <input
                     class = "field_date-input js-dateMonth"
                     placeholder = "ММ"
                     readonly = "readonly"
-                    type = "text" /> <input
+                    type = "text"/> <input
                   class = "field_date-input field_date-input-year js-dateYear"
                   placeholder = "ГГГГ"
                   readonly = "readonly"
-                  type = "text" />
+                  type = "text"/>
               </div>
               <input
                   class = "field_date-picker js-dateInput"
                   name = "date"
                   readonly = "readonly"
                   required = "required"
-                  type = "text" />
+                  type = "text"/>
             </div>
           </div>
         </div>
@@ -92,6 +92,7 @@
             class = "form_field form-field--w50"
         />
         <FieldEmail
+            class = "form_field form-field--w50"
             :config = "{
           name: 'email',
           label: 'Email',
@@ -100,28 +101,40 @@
           },
         }"
             :submitCount = "submitCount"
-            class = "form_field form-field--w50"
+
         />
       </div>
-      <label class = "field">
-				<span class = "field_title">
-					Есть пожелания? Напишите нам:
-				</span>
-        <textarea
-            class = "field_textarea"
-            name = "Пожелания"
-            placeholder = "Напишите что-нибудь">
+      <FieldTextArea class = "form_field field"
+          :config = "{
+            name:'description',
+            label: 'Есть пожелания? Напишите нам:',
+            placeholder: 'Напишите что-нибудь...',
+            rules: {
+              required: true,
+            },
+          }"
+          :submitCount = "submitCount"
+      />
 
-				</textarea>
-      </label>
+      <!--      <label class = "field">-->
+      <!--				<span class = "field_title">-->
+      <!--					Есть пожелания? Напишите нам:-->
+      <!--				</span>-->
+      <!--        <textarea-->
+      <!--            class = "field_textarea"-->
+      <!--            name = "Пожелания"-->
+      <!--            placeholder = "Напишите что-нибудь">-->
+
+      <!--				</textarea>-->
+      <!--      </label>-->
 
       <FieldCheck
           :config = "{
-          name: 'agree',
-          label: ' Я соглашаюсь с пользовательским соглашением и с политикой использования персональных данных',
-          rules: {
-						required: true
-          }
+            name: 'agree',
+            label: ' Я соглашаюсь с пользовательским соглашением и с политикой использования персональных данных',
+            rules: {
+              required: true
+            }
         }"
           :initial-value = "1"
           :submitCount = "submitCount"
@@ -140,6 +153,7 @@
 <script setup>
 import {useForm} from 'vee-validate';
 import {useStore} from '@/stores';
+import FieldTextArea from "~/components/field/FieldTextArea.vue";
 
 const optionsRadio = [
   {

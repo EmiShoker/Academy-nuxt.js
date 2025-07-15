@@ -7,16 +7,18 @@
     transform: scaleX(-1) rotate(-15deg) !important;
   }
 }
+
 .swiper-slide {
   height: auto;
   display: flex;
 }
+
 .swiper--3s {
   width: 100%;
 
   .swiper-slide {
     box-sizing: border-box;
-    width: calc(33.3333% + 20px);
+    width: calc(33.3333% + 20px) !important;
     min-width: 340px;
     padding-right: 60px;
 
@@ -35,6 +37,7 @@
       min-width: 300px;
       padding-right: 20px;
     }
+
     &:last-child {
       width: calc(33.3333% - 40px);
       min-width: 280px;
@@ -49,19 +52,24 @@
         width: calc(33.3333% - 13.3333px);
       }
     }
+
     & > * {
-      width: 100%;
+      width: 100% !important;
     }
+
     .event-card {
       margin: 0 auto;
+
       &_link {
         cursor: pointer;
         cursor: grab;
+
         &:active {
           cursor: pointer;
           cursor: grabbing;
         }
       }
+
       &_title {
         cursor: pointer;
       }

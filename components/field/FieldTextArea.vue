@@ -1,28 +1,18 @@
 <template>
-  <div v-if = "name" class = "field" :class = "{'field--disabled': disabled}">
-    <div class = "field_wrap">
-
-      <input
-          v-model = "value"
-          v-maska = "mask"
-          class = "field_input"
-          :class = "{
-        'field_input--has-value':value || value === 0,
-        'field_input--has-error': errorMessage && submitCount,
-      }"
-          :autocomplete = "autocomplete"
+  <div v-if = "name" :class = "{'field--disabled': disabled}" class = "field">
+    <label class = "field_title" for = "name">
+      {{ label }}
+      <textarea v-model = "value"
+          class = "field_textarea"
+          :placeholder = "placeholder"
           :disabled = "disabled"
-          :inputmode = "inputmode"
-          type = "text"
-      />
-      <span v-if = "label" class = "field_label" :class = "{}">{{ label }}</span>
-    </div>
+          autocomplete = "off"></textarea>
+    </label>
     <div v-if = "errorMessage && submitCount" class = "field_error error ">
       {{ errorMessage }}
     </div>
   </div>
 </template>
-
 <script setup>
 import {useField} from 'vee-validate';
 
@@ -41,7 +31,6 @@ const props = defineProps({
   }
 });
 
-
 const name = computed(() => {
   return (typeof props.config.name === 'string' && props.config.name) || '';
 });
@@ -53,32 +42,18 @@ const label = computed(() => {
 const veeLabel = computed(() => {
   return (typeof props.config.veeLabel === 'string' && props.config.veeLabel) || '';
 });
-
-const autocomplete = computed(() => {
-  return (typeof props.config.autocomplete === 'string' && props.config.autocomplete) || 'on';
+const placeholder = computed(() => {
+  return (typeof props.config.placeholder === 'string' && props.config.placeholder) || '';
 });
-
 const disabled = computed(() => {
   return (typeof props.config.disabled === 'boolean' && props.config.disabled) || false;
 });
-
-const inputmode = computed(() => {
-  return (typeof props.config.inputmode === 'string' && props.config.inputmode) || 'text';
-});
-
-
 const rules = computed(() => {
-  return Object.assign((typeof props.config.rules === 'object' && props.config.rules) || {}, {});
+  return (typeof props.config.rules === 'object' && props.config.rules) || {};
 });
-
 const {value, errorMessage} = name.value ? useField(name.value, rules.value, {
   initialValue: props.initialValue,
   label: veeLabel.value ? `${veeLabel.value}` : label.value ? `${label.value}` : ''
 }) : {};
 </script>
-
-<style
-    lang = "less"
-    scoped>
-
-</style>
+<style lang = "less"></style>

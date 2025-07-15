@@ -1,6 +1,5 @@
 [
   {
-    "class": "events_card",
     "slug": "events/nirvana",
     "img": "/images/events/Nirvana.svg",
     "alt": "nirvana",
@@ -10,7 +9,6 @@
     "datetime": "2022-12-07T18:00"
   },
   {
-    "class": "events_card",
     "slug": "events/stuff",
     "img": "/images/events/HowStuffWorks.svg",
     "alt": "stuff",
@@ -20,7 +18,6 @@
     "datetime": "2022-12-14T18:30"
   },
   {
-    "class": "events_card",
     "slug": "events/sade",
     "img": "/images/events/sade.jpg",
     "alt": "sade",
@@ -30,7 +27,6 @@
     "datetime": "2021-12-16T18:00"
   },
   {
-    "class": "events_card",
     "slug": "events/malevich",
     "img": "/images/events/Malevich.svg",
     "alt": "malevich",
@@ -40,7 +36,6 @@
     "datetime": "2022-12-23T20:00"
   },
   {
-    "class": "events_card",
     "slug": "events/tatler",
     "img": "/images/events/Tatler.svg",
     "alt": "tatler",
@@ -50,7 +45,6 @@
     "datetime": "2022-12-25T13:00"
   },
   {
-    "class": "events_card",
     "slug": "events/hatters",
     "img": "/images/events/Hatters.svg",
     "alt": "hatters",
