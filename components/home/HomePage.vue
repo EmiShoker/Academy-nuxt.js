@@ -2,7 +2,11 @@
   <div class = "home">
     <HomeMainHeader class = "home_main-header"/>
     <HomeOffers/>
+    <HomeAbout/>
+    <HomeBlog/>
     <HomeUpcoming/>
+    <HomeContacts/>
+
   </div>
 </template>
 

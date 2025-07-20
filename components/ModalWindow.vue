@@ -1,17 +1,19 @@
 <template>
-  <teleport to="body">
-    <transition name="modal-window">
-      <div v-if="isActive" class="modal-window" :class="[{'modal-window--active': isActive }, customClass]">
-        <div class="modal-window_wrapper" :style="{ maxWidth: width }">
+  <teleport to = "body">
+    <transition name = "modal-window">
+      <div v-if = "isActive" class = "modal-window" :class = "[{'modal-window--active': isActive }, customClass]">
+        <div class = "modal-window_wrapper" :style = "{ maxWidth: width }">
 
-          <div class="modal-window_sticky-close">
-            <button type="button" class="modal-window_close" @click="close">
-              <SvgIcon class="modal-window_close-icon modal-window_x-btn x-btn js-ppCloseBtn" name="x" width="24"
-                       height="24"/>
+          <div class = "modal-window_sticky-close">
+            <button type = "button" class = "modal-window_close" @click = "close">
+              <SvgIcon class = "modal-window_close-icon modal-window_x-btn x-btn x-btn_icon js-ppCloseBtn"
+                  name = "x"
+                  width = "24"
+                  height = "24"/>
             </button>
           </div>
-          <div class="modal-window_container" :style="{ maxWidth: widthContainer }">
-            <slot name="content"></slot>
+          <div class = "modal-window_container" :style = "{ maxWidth: widthContainer }">
+            <slot name = "content"></slot>
           </div>
 
 
@@ -55,7 +57,7 @@ const close = () => {
 };
 </script>
 
-<style lang="less">
+<style lang = "less">
 .modal-window {
   box-sizing: border-box;
   position: fixed;

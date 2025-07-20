@@ -12,14 +12,27 @@
           </swiper-slide>
         </swiper-container>
 
+        <div class = "swiper-footer">
+          <button type = "button" class = "arrow swiper-arrow-prev arrow--left">
+            <SvgIcon name = "arrow"/>
+          </button>
 
-        <NuxtLink to = "/events">Смотреть все</NuxtLink>
+          <div class = "swiper-pagination"></div>
+
+          <button type = "button" class = "swiper-arrow-next arrow">
+            <SvgIcon name = "arrow"/>
+          </button>
+        </div>
+
+        <NuxtLink class = "upcoming_link link" to = "/events">Смотреть все</NuxtLink>
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
+// import {Swiper, SwiperSlide} from 'swiper/vue';
+
 const app = useNuxtApp();
 const storeApi = useStoreApi();
 
@@ -67,7 +80,7 @@ onMounted(() => {
 <style scoped lang = "less">
 .upcoming {
   &_wrapper {
-    padding: 84px 0;
+    padding: 84px 0 148px;
     //background-image: url("../assets/images/home-events.png");
     background-position: center;
     background-size: 100% 100%;
@@ -114,16 +127,16 @@ onMounted(() => {
 
   &_swiper-slide.swiper-slide {
     &:first-child {
-      padding-left: 30px;
+      //margin-left: 30px;
       @media @bw768 {
-        padding-left: 20px;
+        margin-left: 20px;
       }
     }
 
     &:last-child {
-      padding-right: 30px;
+      //margin-right: 30px;
       @media @bw768 {
-        padding-right: 20px;
+        margin-right: 20px;
       }
     }
   }

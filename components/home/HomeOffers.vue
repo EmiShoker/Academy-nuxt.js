@@ -1,12 +1,12 @@
 <template>
-  <section class="home-offers offers">
-    <h4 class="home-offers_title">Я хочу:</h4>
+  <section class = "home-offers offers">
+    <h4 class = "home-offers_title">Я хочу:</h4>
 
-    <div class="home-offers_btns">
-      <button @click="openEventModal" id="js-openEventModal" class="home-offers_btn btn btn--red" type="button">Провести
+    <div class = "home-offers_btns">
+      <button @click = "openEventModal" class = "home-offers_btn btn btn--red" type = "button">Провести
         мероприятие
       </button>
-      <button @click="openRentModal" class="home-offers_btn btn" type="button">Стать арендатором</button>
+      <button @click = "openRentModal" class = "home-offers_btn btn" type = "button">Стать арендатором</button>
     </div>
   </section>
 </template>
@@ -27,7 +27,7 @@ const openRentModal = () => {
   })
 }
 </script>
-<style lang="less" scoped>
+<style lang = "less" scoped>
 .home-offers {
   .container;
   display: flex;
@@ -36,8 +36,11 @@ const openRentModal = () => {
   text-align: center;
 
   &_title {
-    width: 624px;
-    margin: 0 auto 45px;
+    display: flex;
+    justify-content: center;
+    max-width: 624px;
+    width: 100%;
+    margin: 0 0 46px 25px;
     font-weight: 400;
     font-family: @font2;
     font-size: 22px;
@@ -52,9 +55,9 @@ const openRentModal = () => {
   &_btns {
     display: flex;
     align-items: center;
-    //margin-top: 30px;
-    //max-width: 624px;
-    //gap: 100px;
+    justify-content: space-between;
+    max-width: 624px;
+    width: 100%;
 
     @media (max-width: 600px) {
       width: 624px;
@@ -65,10 +68,13 @@ const openRentModal = () => {
   }
 
   &_btn {
-    margin-right: 35px;
+    &:first-child {
+      width: 272px;
+      padding: 15px 0;
+    }
 
-    &:nth-child(2) {
-      margin-left: 65px;
+    &:last-child {
+      width: 246px;
     }
 
     @media (max-width: 600px) {
